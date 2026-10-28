@@ -1,0 +1,13 @@
+name: Schedule probe public
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show trigger
+        run: echo "Triggered by ${{ github.event_name }}"
